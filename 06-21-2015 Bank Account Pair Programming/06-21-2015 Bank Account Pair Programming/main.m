@@ -8,16 +8,51 @@
 
 #import <Foundation/Foundation.h>
 
+@interface Calculator : NSObject
+
+-(void)setFirstNumber:(float)a;
+-(void)setSecondNumber:(float)b;
+-(void)displayAdditionValue;
+
+
+
+@end
+
+@implementation Calculator {
+    float firstNumber;
+    float secondNumber;
+}
+-(void)setFirstNumber:(float)a {
+    firstNumber = a;
+}
+-(void)setSecondNumber:(float)b {
+    secondNumber = b;
+}
+-(void)displayAdditionValue {
+    NSString *additionValue = [NSString stringWithFormat:@"%f %f : %f", firstNumber, secondNumber, firstNumber + secondNumber];
+    NSLog(@"%@", additionValue );
+}
+
+
+
+
+@end
 
 
 
 
 
-
-// BankAccount needs to have a way of tracking the money the Patron withdraws or deposits, and also of displaying current balance. The patron can add money, subtract money, display their current balance, possibly transfer money from one account to another. Potential additional bonus features: if the patron has multiple accounts, and overdrafts, the difference + a fee is subtracted from their other account.
+// Calculator needs to be able to perform mathematical operations. The most basic features we would need are addition and subtraction. There also needs to be a way to output what we have calculated. The 'accumulator' is essentially acting as a sum of what has already been calculated.
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        
+        Calculator *computer = [[Calculator alloc] init];
+        computer.firstNumber = 9;
+        computer.secondNumber = 12;
+        
+        [computer displayAdditionValue];
+        
         
     }
     return 0;
