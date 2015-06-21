@@ -10,47 +10,48 @@
 
 @interface Calculator : NSObject
 
--(void)setFirstNumber:(float)a;
--(void)setSecondNumber:(float)b;
--(void)displayAdditionValue;
--(void)displaySubtractionValue;
--(void)displayMultiplicationValue;
--(void)displayDivisionValue;
+-(void)setCurrentValue:(float)n;
+-(void)addition:(float)n;
+-(void)subtraction:(float)n;
+-(void)multiplication:(float)n;
+-(void)division:(float)n;
+-(void)changeSign;
+-(void)displayCurrentValue;
+//-(void)setSecondNumber;
+//-(void)displayAdditionValue;
+//-(void)displaySubtractionValue;
+//-(void)displayMultiplicationValue;
+//-(void)displayDivisionValue;
 
 
 
 @end
 
 @implementation Calculator {
-    float firstNumber;
-    float secondNumber;
+    float currentValue;
 }
--(void)setFirstNumber:(float)a {
-    firstNumber = a;
-}
--(void)setSecondNumber:(float)b {
-    secondNumber = b;
-}
--(void)displayAdditionValue {
-    NSString *additionValue = [NSString stringWithFormat:@"%f %f : %f", firstNumber, secondNumber, firstNumber + secondNumber];
-    NSLog(@"%@", additionValue );
+-(void)displayCurrentValue {
+    NSLog(@"%f", currentValue);
 }
 
--(void)displaySubtractionValue {
-    NSString *subtractionValue = [NSString stringWithFormat:@"%f %f : %f", firstNumber, secondNumber, firstNumber - secondNumber];
-    NSLog(@"%@", subtractionValue );
+-(void)setCurrentValue:(float)n {
+    currentValue = n;
 }
-
--(void)displayMultiplicationValue {
-    NSString *multiplicationValue = [NSString stringWithFormat:@"%f %f : %f", firstNumber, secondNumber, firstNumber * secondNumber];
-    NSLog(@"%@", multiplicationValue );
+-(void)addition:(float)n {
+    currentValue += n;
 }
-
--(void)displayDivisionValue {
-    NSString *divisionValue = [NSString stringWithFormat:@"%f %f : %f", firstNumber, secondNumber, firstNumber / secondNumber];
-    NSLog(@"%@", divisionValue );
+-(void)subtraction:(float)n {
+    currentValue -= n;
 }
-
+-(void)multiplication:(float)n {
+    currentValue = currentValue * n;
+}
+-(void)division:(float)n {
+    currentValue = currentValue / n;
+}
+-(void)changeSign {
+    currentValue = currentValue * -1;
+}
 
 
 
@@ -65,11 +66,16 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        Calculator *computer = [[Calculator alloc] init];
-        computer.firstNumber = 9;
-        computer.secondNumber = 12;
+        Calculator *myCalculator = [[Calculator alloc] init];
+        [myCalculator setCurrentValue:0];
+        [myCalculator addition:1];
+        [myCalculator addition:2];
+        [myCalculator addition:3];
+        [myCalculator changeSign];
+        [myCalculator displayCurrentValue];
         
-        [computer displayDivisionValue];
+        
+        
         
         
     }
