@@ -13,6 +13,9 @@
 -(void)setFirstNumber:(float)a;
 -(void)setSecondNumber:(float)b;
 -(void)displayAdditionValue;
+-(void)displaySubtractionValue;
+-(void)displayMultiplicationValue;
+-(void)displayDivisionValue;
 
 
 
@@ -33,6 +36,21 @@
     NSLog(@"%@", additionValue );
 }
 
+-(void)displaySubtractionValue {
+    NSString *subtractionValue = [NSString stringWithFormat:@"%f %f : %f", firstNumber, secondNumber, firstNumber - secondNumber];
+    NSLog(@"%@", subtractionValue );
+}
+
+-(void)displayMultiplicationValue {
+    NSString *multiplicationValue = [NSString stringWithFormat:@"%f %f : %f", firstNumber, secondNumber, firstNumber * secondNumber];
+    NSLog(@"%@", multiplicationValue );
+}
+
+-(void)displayDivisionValue {
+    NSString *divisionValue = [NSString stringWithFormat:@"%f %f : %f", firstNumber, secondNumber, firstNumber / secondNumber];
+    NSLog(@"%@", divisionValue );
+}
+
 
 
 
@@ -51,7 +69,7 @@ int main(int argc, const char * argv[]) {
         computer.firstNumber = 9;
         computer.secondNumber = 12;
         
-        [computer displayAdditionValue];
+        [computer displayDivisionValue];
         
         
     }
