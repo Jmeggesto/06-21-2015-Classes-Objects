@@ -17,6 +17,11 @@
 -(void)division:(float)n;
 -(void)changeSign;
 -(void)displayCurrentValue;
+-(void)square;
+-(void)accumulatorReciprocal;
+
+
+
 //-(void)setSecondNumber;
 //-(void)displayAdditionValue;
 //-(void)displaySubtractionValue;
@@ -52,8 +57,12 @@
 -(void)changeSign {
     currentValue = currentValue * -1;
 }
-
-
+- (void)square {
+    currentValue = currentValue * currentValue;
+}
+- (void) accumulatorReciprocal {
+    currentValue = 1 / currentValue;
+}
 
 @end
 
@@ -71,8 +80,22 @@ int main(int argc, const char * argv[]) {
         [myCalculator addition:1];
         [myCalculator addition:2];
         [myCalculator addition:3];
+        [myCalculator subtraction:1];
+        [myCalculator subtraction:2];
+        [myCalculator subtraction:50];
+        [myCalculator multiplication:9];
+        [myCalculator multiplication:2];
+        [myCalculator multiplication:3];
+        [myCalculator division:2.6];
+        [myCalculator division:3.4];
+        [myCalculator division:4.2];
         [myCalculator changeSign];
         [myCalculator displayCurrentValue];
+        [myCalculator square];
+        [myCalculator displayCurrentValue];
+        [myCalculator accumulatorReciprocal];
+        [myCalculator displayCurrentValue];
+        
         
         
         
