@@ -19,6 +19,9 @@
 -(void)displayCurrentValue;
 -(void)square;
 -(void)accumulatorReciprocal;
+-(void)memoryCommit;
+-(void)displayMemoryVal;
+-(void)retrieveMemory;
 
 
 
@@ -34,6 +37,7 @@
 
 @implementation Calculator {
     float currentValue;
+    float memoryVal;
 }
 -(void)displayCurrentValue {
     NSLog(@"%f", currentValue);
@@ -63,7 +67,15 @@
 - (void) accumulatorReciprocal {
     currentValue = 1 / currentValue;
 }
-
+-(void)memoryCommit {
+    memoryVal = currentValue;
+}
+-(void)displayMemoryVal {
+    NSLog(@"%f", memoryVal);
+}
+-(void)retrieveMemory {
+    currentValue = memoryVal;
+}
 @end
 
 
@@ -77,25 +89,13 @@ int main(int argc, const char * argv[]) {
         
         Calculator *myCalculator = [[Calculator alloc] init];
         [myCalculator setCurrentValue:0];
-        [myCalculator addition:1];
-        [myCalculator addition:2];
-        [myCalculator addition:3];
-        [myCalculator subtraction:1];
-        [myCalculator subtraction:2];
-        [myCalculator subtraction:50];
-        [myCalculator multiplication:9];
-        [myCalculator multiplication:2];
-        [myCalculator multiplication:3];
-        [myCalculator division:2.6];
-        [myCalculator division:3.4];
-        [myCalculator division:4.2];
-        [myCalculator changeSign];
+        [myCalculator addition:2.2];
+        [myCalculator addition:1.299];
+        [myCalculator memoryCommit];
+        [myCalculator division:0.06];
+        [myCalculator multiplication:50];
         [myCalculator displayCurrentValue];
-        [myCalculator square];
-        [myCalculator displayCurrentValue];
-        [myCalculator accumulatorReciprocal];
-        [myCalculator displayCurrentValue];
-        
+        [myCalculator displayMemoryVal];
         
         
         

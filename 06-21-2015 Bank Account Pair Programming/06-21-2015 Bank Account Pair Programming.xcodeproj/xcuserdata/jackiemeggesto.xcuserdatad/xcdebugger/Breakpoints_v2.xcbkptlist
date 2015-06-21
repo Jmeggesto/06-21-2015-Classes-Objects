@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "06-21-2015 Bank Account Pair Programming/main.m"
-            timestampString = "456597955.260672"
+            timestampString = "456604839.200479"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "@interface Calculator"
             landmarkType = "2">
          </BreakpointContent>
